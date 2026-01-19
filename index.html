@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Hướng Nghiệp Smart</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f2f5f9;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: rgba(30, 60, 114, 0.95);
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  margin-right: 40px;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu span {
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.menu span:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ===== PAGE ===== */
+.page {
+  display: none;
+  padding-top: 90px;
+  min-height: 100vh;
+}
+
+.active {
+  display: block;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 90vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+  background-size: cover;
+  background-position: center;
+}
+
+/* BOX NĂNG LỰC */
+.hero-box {
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 420px;
+  background: rgba(255,255,255,0.92);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  backdrop-filter: blur(6px);
+}
+
+.hero-box h2 {
+  margin-top: 0;
+  color: #1e3c72;
+}
+
+.hero-box p {
+  color: #444;
+  line-height: 1.6;
+}
+
+.hero-box button {
+  margin-top: 15px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #1e3c72;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* ===== SECTION ===== */
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #1e3c72;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo" onclick="showPage('home')">HƯỚNG NGHIỆP SMART</div>
+  <div class="menu">
+    <span onclick="showPage('quiz')">Trả lời câu hỏi</span>
+    <span onclick="showPage('university')">Trường đại học</span>
+    <span onclick="showPage('study')">Phương pháp học</span>
+    <span onclick="showPage('exam')">Đề thi mô phỏng</span>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="hero">
+    <div class="hero-box">
+      <h2>🔍 Tìm ra năng lực của bản thân</h2>
+      <p>
+        Trả lời một số câu hỏi ngắn để khám phá
+        điểm mạnh, sở thích và ngành học phù hợp với bạn.
+      </p>
+      <button onclick="showPage('quiz')">Bắt đầu trắc nghiệm</button>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="page">
+  <div class="section">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1584697964192-77f4e2d1a9e8">
+      <div class="card-content">
+        <h2>Trắc nghiệm hướng nghiệp</h2>
+        <p>
+          Trả lời các câu hỏi để hệ thống phân tích
+          năng lực và định hướng ngành học phù hợp.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- UNIVERSITY -->
+<div id="university" class="page">
+  <div class="section">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b">
+      <div class="card-content">
+        <h2>Danh sách trường đại học</h2>
+        <p>
+          Thông tin tuyển sinh, ngành đào tạo và
+          định hướng nghề nghiệp của các trường đại học.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STUDY -->
+<div id="study" class="page">
+  <div class="section">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+      <div class="card-content">
+        <h2>Phương pháp học các môn</h2>
+        <p>
+          Lộ trình học tập hiệu quả, mẹo học nhanh – nhớ lâu
+          cho từng môn học THPT.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXAM -->
+<div id="exam" class="page">
+ <h2 class="section-title">Đề thi mô phỏng & Cách giải</h2>
+
+<div class="grid">
+
+    <!-- ĐỀ 1 -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1600195077075-dc1c9c5c1f7f">
+        <div class="card-content">
+            <h3>Toán – Hàm số</h3>
+            <p><strong>Đề bài:</strong><br>
+                Cho hàm số y = ax³ + bx² + cx + d. Tìm điều kiện để hàm số đồng biến trên ℝ.
+            </p>
+
+            <p><strong>Gợi ý cách giải:</strong></p>
+            <ul>
+                <li>Tính đạo hàm y'</li>
+                <li>Xét y' ≥ 0 với mọi x</li>
+                <li>Suy ra điều kiện của a, b, c</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ĐỀ 2 -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1584697964154-53b6b1c5d3f4">
+        <div class="card-content">
+            <h3>Ngữ văn – Nghị luận xã hội</h3>
+            <p><strong>Đề bài:</strong><br>
+                Trình bày suy nghĩ của anh/chị về vai trò của định hướng nghề nghiệp sớm.
+            </p>
+
+            <p><strong>Dàn ý gợi ý:</strong></p>
+            <ul>
+                <li>Giải thích vấn đề</li>
+                <li>Ý nghĩa đối với học sinh</li>
+                <li>Liên hệ bản thân</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
